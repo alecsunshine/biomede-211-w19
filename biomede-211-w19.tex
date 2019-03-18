@@ -2345,6 +2345,14 @@ Draw an s-plane. Label the axes. Plot these poles -- (-2,0) and (-5,0) -- and th
 02/21/2019 – Lecture 12. 
 \section{Source-free RC circuits}
 \subsection{One resistor, one capacitor}
+Here we have a circuit with one resistor and one capacitor in series.
+For the resistor, I=V/R. For the capacitor, I=C(dV/dt).(We get this from differentiating the equation Q=CV)
+Using KCL, we get the equation (0-V)/R - CdV/dt.
+This then simplifies to dV/dt + (1/RC)V = 0.
+Taking the LaPlace Transform of both sides gives us: s * tilde{V} - V(0) + (1/RC) * tilde{V} = 0.
+After some more math, we get tilde{V} * (s + (1/RC)) = V(0), simplfying to tilde{V} = V(0)/(s + 1/(RC)).
+If we take the inverse LaPlace of this using Mellin's Inverse formula, we get that V(t) = V(0)*e^(-t/(RC)).
+We can see from both this equation and the poles in the equation in the step before that this function is decaying, as expected for this circuit.
 \subsection{Two or more resistors and/or capacitors}
 \section{Source-free ``active'' circuits}
 \section{First-order systems with sources}
