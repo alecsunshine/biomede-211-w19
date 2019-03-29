@@ -773,6 +773,17 @@ What if we didn’t have any resistors? $\rightarrow$ Vi = v2 = v1 = Vo $\righta
 02/21/2019 – Lecture 12. 
 \section{Source-free RC circuits}
 \subsection{One resistor, one capacitor}
+\This circuit has one resistor and one capacitor in series.
+\To find the function for the voltage of this source-free circuit, we start by doing KCL.
+\Using the node in between the branch containing the resistor and the branch containing the capacitor, we get that the current coming in from the resistir is (Vg-Va)/R, in which Va is just the voltage at the node. 
+\The equation for the current going out of the node through the capacitor is C(dV/dt), which can be found from the equation Q=CV.
+\We now get the equation: (0-Va)/R - C(dVa/dt) = 0  which simplifies to dVa/dt + Va/RC = 0.
+\We now take the LaPlace Transform which gives us: sV{tilde} - V(0) + (1/RC)V{tilde} = 0
+\Simplifying gives us: V{tilde} = V(0)/(s+1/RC). The pole is s = -1/RC
+\Taking the inverse LaPlace to get it back into the t-domain gives us: v(t) = v(0)e^(-t/RC)
+\As seen in this equation and with the negative pole, the solution to the circuit decays, making it stable.
+\This is what we'd expect for a circuit, for it must be stable otherwise we would not see it in real life. 
+
 \subsection{Two or more resistors and/or capacitors}
 \section{Source-free ``active'' circuits}
 \section{First-order systems with sources}
